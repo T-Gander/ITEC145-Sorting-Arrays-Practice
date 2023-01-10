@@ -31,6 +31,8 @@
             this.lstOutput = new System.Windows.Forms.ListBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnSort = new System.Windows.Forms.Button();
+            this.btnSaveArray = new System.Windows.Forms.Button();
+            this.btnLoadArray = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstOutput
@@ -62,11 +64,33 @@
             this.btnSort.UseVisualStyleBackColor = true;
             this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
+            // btnSaveArray
+            // 
+            this.btnSaveArray.Location = new System.Drawing.Point(99, 286);
+            this.btnSaveArray.Name = "btnSaveArray";
+            this.btnSaveArray.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveArray.TabIndex = 3;
+            this.btnSaveArray.Text = "Save Array";
+            this.btnSaveArray.UseVisualStyleBackColor = true;
+            this.btnSaveArray.Click += new System.EventHandler(this.btnSaveArray_Click);
+            // 
+            // btnLoadArray
+            // 
+            this.btnLoadArray.Location = new System.Drawing.Point(196, 286);
+            this.btnLoadArray.Name = "btnLoadArray";
+            this.btnLoadArray.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadArray.TabIndex = 4;
+            this.btnLoadArray.Text = "Load Array";
+            this.btnLoadArray.UseVisualStyleBackColor = true;
+            this.btnLoadArray.Click += new System.EventHandler(this.btnLoadArray_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLoadArray);
+            this.Controls.Add(this.btnSaveArray);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.lstOutput);
@@ -81,5 +105,7 @@
         private ListBox lstOutput;
         private Button btnGenerate;
         private Button btnSort;
+        private Button btnSaveArray;
+        private Button btnLoadArray;
     }
 }

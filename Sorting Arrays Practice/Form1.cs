@@ -38,8 +38,7 @@ namespace Sorting_Arrays_Practice
 
                         for (int k = 0; k < values.Length; k++)
                         {
-                            
-                            lstOutput.Items.Add(values[k]);
+                            lstOutput.Items.Add(values[k]);                 //Sorting my arrays
                         }
 
                     }
@@ -47,6 +46,43 @@ namespace Sorting_Arrays_Practice
                 
 
             }
+        }
+
+        private void btnSaveArray_Click(object sender, EventArgs e)
+        {
+            StreamWriter outputFile;
+
+            outputFile = File.CreateText("ArraysLog.txt");
+
+            foreach(int i in lstOutput.Items)
+            {
+                outputFile.WriteLine(i);                    //How to save an array to a file
+            }
+            outputFile.Close();
+            MessageBox.Show("Saved!");
+        }
+
+        private void btnLoadArray_Click(object sender, EventArgs e)
+        {
+            lstOutput.Items.Clear();
+
+            StreamReader inputFile;                         //How to load my array
+
+            inputFile = File.OpenText("ArraysLog.txt");
+
+            for(int i = 0; i<values.Length; i++)
+            {
+                values[i] = int.Parse(inputFile.ReadLine());
+
+            }
+
+            foreach(int i in values)
+            {
+                lstOutput.Items.Add(i);
+            }
+
+            inputFile.Close();
+
         }
     }
 }
